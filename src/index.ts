@@ -8,6 +8,7 @@ const getRandomNumber = (limit: number): number => {
 export const getFilteredMovies = ({ genres }: { genres: Genre[] }): Movie[] => {
   if (genres.length == 0) return [movies[getRandomNumber(movies.length)]];
 
+  // The complexity is O(n)
   let result = movies
     .map((movie: Movie) => {
       const isMatch = movie.genres.every(
